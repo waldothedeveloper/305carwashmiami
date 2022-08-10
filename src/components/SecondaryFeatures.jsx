@@ -1,12 +1,11 @@
-import { useId } from 'react'
+import { Container } from '@/components/Container'
 import Image from 'next/future/image'
 import { Tab } from '@headlessui/react'
 import clsx from 'clsx'
-
-import { Container } from '@/components/Container'
 import screenshotContacts from '@/images/screenshots/contacts.png'
 import screenshotInventory from '@/images/screenshots/inventory.png'
 import screenshotProfitLoss from '@/images/screenshots/profit-loss.png'
+import { useId } from 'react'
 
 const features = [
   {
@@ -216,11 +215,10 @@ export function SecondaryFeatures() {
       <Container>
         <div className="mx-auto max-w-2xl md:text-center">
           <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl">
-            Simplify everyday business tasks.
+            How does it work?
           </h2>
           <p className="mt-4 text-lg tracking-tight text-slate-700">
-            Because you’d probably be a little confused if we suggested you
-            complicate your everyday business tasks instead.
+            Scheduling an appointment with us takes just 3 simple steps
           </p>
         </div>
         <FeaturesMobile />
