@@ -1,39 +1,35 @@
 import { useEffect, useState } from 'react'
-import Image from 'next/future/image'
-import { Tab } from '@headlessui/react'
-import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
+import Image from 'next/image'
+import { Tab } from '@headlessui/react'
 import backgroundImage from '@/images/background-features.jpg'
-import screenshotExpenses from '@/images/screenshots/expenses.png'
-import screenshotPayroll from '@/images/screenshots/payroll.png'
-import screenshotReporting from '@/images/screenshots/reporting.png'
-import screenshotVatReturns from '@/images/screenshots/vat-returns.png'
+import car_polish from '@/images/car_polish.jpeg'
+import clsx from 'clsx'
+import exterior_carwash from '@/images/yellow_carwash_exterior.jpeg'
+import interior_carwash from '@/images/car_interior_cleaning.jpeg'
 
 const features = [
   {
-    title: 'Payroll',
+    title: 'Exterior wash & wax',
     description:
-      "Keep track of everyone's salaries and whether or not they've been paid. Direct deposit not supported.",
-    image: screenshotPayroll,
+      'The wash includes removing dirt and brake dust from wheels, as well as removing bugs and other debris from the entire vehicle.',
+    image: exterior_carwash,
+    image_description: 'Photo by Philipp Katzenberger on Unsplash',
   },
   {
-    title: 'Claim expenses',
+    title: 'Interior cleaning',
     description:
-      "All of your receipts organized into one place, as long as you don't mind typing in the data by hand.",
-    image: screenshotExpenses,
+      'Take your car wash to the next level! We can vacuum your seats and carpets, clean all glass surfaces (interior and exterior), apply a leather conditioner to leather surfaces, clean headliners, and shampoo the carpets.',
+    image: interior_carwash,
+    image_description: 'Photo by Broc Wegner on Unsplash',
   },
   {
-    title: 'VAT handling',
+    title: 'Detailing',
     description:
-      "We only sell our software to companies who don't deal with VAT at all, so technically we do all the VAT stuff they need.",
-    image: screenshotVatReturns,
-  },
-  {
-    title: 'Reporting',
-    description:
-      'Easily export your data into an Excel spreadsheet where you can do whatever the hell you want with it.',
-    image: screenshotReporting,
+      "This is a process that focuses on removing both visible and invisible contaminants from the vehicle's exterior and interior, polishing the exterior to its original blemish-free finish.",
+    image: car_polish,
+    image_description: ``,
   },
 ]
 
@@ -62,21 +58,20 @@ export function PrimaryFeatures() {
       className="relative overflow-hidden bg-blue-600 pt-20 pb-28 sm:py-32"
     >
       <Image
-        className="absolute top-1/2 left-1/2 max-w-none translate-x-[-44%] translate-y-[-42%]"
+        className="absolute top-1/2 left-1/2 max-w-none translate-x-[20%] translate-y-[20%]"
         src={backgroundImage}
         alt=""
-        width={2245}
-        height={1636}
-        unoptimized
+        layout="fill"
+        // width={1250}
+        // height={1250}
       />
       <Container className="relative">
         <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            Everything you need to run your books.
+            Everything you car needs.
           </h2>
           <p className="mt-6 text-lg tracking-tight text-blue-100">
-            Well everything you need if you aren’t that picky about minor
-            details like tax compliance.
+            We offer a wide range of services to keep your car looking its best.
           </p>
         </div>
         <Tab.Group
@@ -138,7 +133,7 @@ export function PrimaryFeatures() {
                       <Image
                         className="w-full"
                         src={feature.image}
-                        alt=""
+                        alt={feature.image_description}
                         priority
                         sizes="(min-width: 1024px) 67.8125rem, (min-width: 640px) 100vw, 45rem"
                       />
